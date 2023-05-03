@@ -63,7 +63,9 @@ class Noticia
 
     public function getFecha()
     {
-        return $this->fecha;
+        $date = DateTime::createFromFormat('Y-m-d', $this->fecha);
+        $nuevaFecha = $date->format('d-m-Y');
+        return $nuevaFecha;
     }
 
     // Métodos set

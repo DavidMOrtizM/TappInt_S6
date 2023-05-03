@@ -1,6 +1,5 @@
 <?php
 require_once 'modelos/NoticiasModelos.php';
-
 $noticiasModelo = new NoticiasModelos();
 
 
@@ -33,17 +32,19 @@ foreach ($categorias as $categoria) {
         <div class="row" id="<?php echo $categoria; ?>">
             <?php foreach ($noticia_categoria as $noticia): ?>
                 <div class="col-md-4 custom-col">
-                    <div class="card cardhover h-100">
-                        <h4 class="card-title">
-                            <?php echo $noticia->getTitulo(); ?>
-                        </h4>
-                        <img class="card-img-top w-800" src="<?php echo $noticia->getFoto(); ?>" alt="Imagen de la Noticia">
-                        <div class="card-body">
-                            <h5 class="card-text">
-                                <?php echo $noticia->getFecha(); ?>
-                            </h5>
+                    <a style="text-decoration= none;" href="index.php?action=noticia&categoria=<?php echo $noticia->getCategoria(); ?>&id=<?php echo $noticia->getId(); ?>">
+                        <div class="card cardhover h-100">
+                            <h4 class="card-title">
+                                <?php echo $noticia->getTitulo(); ?>
+                            </h4>
+                            <img class="card-img-top w-800" src="<?php echo $noticia->getFoto(); ?>" alt="Imagen de la Noticia">
+                            <div class="card-body">
+                                <h5 class="card-text">
+                                    <?php echo $noticia->getFecha(); ?>
+                                </h5>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php endforeach; ?>
         </div>

@@ -27,7 +27,7 @@ class NoticiasModelos
     });
     foreach ($dato_noticia as $noticia) {
       $noticiaObj = new Noticia(
-        $noticia['ID'],
+        $noticia['id'],
         $noticia['titulo'],
         $noticia['categoria'],
         $noticia['foto'],
@@ -52,42 +52,30 @@ class NoticiasModelos
   }
   public function dos_Primeras_Noticias()
   {
-    $dosNoticias = array_slice($this->noticiasObj, 1, 3);
-    $noticiaCombinada = new stdClass();
-    $noticiaCombinada->noticia1 = $dosNoticias[0];
-    $noticiaCombinada->noticia2 = $dosNoticias[1];
+    $noticiaCombinada = array();
+    array_push($noticiaCombinada, $this->noticiasObj[1]);
+    array_push($noticiaCombinada, $this->noticiasObj[2]);
     return $noticiaCombinada;
   }
 
-
-  public function Lista_Categoria($filtrar_categoria)
+  public function Lista_Categoria($categoria)
   {
-    $dato_noticia = json_decode(file_get_contents('noticias.json'), true);
-    usort($dato_noticia, function ($a, $b) {
-      $fechaA = strtotime($a['fecha']);
-      $fechaB = strtotime($b['fecha']);
-
-      return $fechaB - $fechaA;
-    });
-
-    $noticias_filtradas = array();
-    $categoria = $filtrar_categoria;
-    foreach ($dato_noticia as $noticia) {
-      if ($noticia["categoria"] === $categoria) {
-        $noticiaObj = new Noticia(
-          $noticia['ID'],
-          $noticia['titulo'],
-          $noticia['categoria'],
-          $noticia['foto'],
-          $noticia['texto'],
-          $noticia['audio'],
-          $noticia['video'],
-          $noticia['fecha']
-        );
-        array_push($noticias_filtradas, $noticiaObj);
+    $noticiasFiltradas = array();
+    foreach ($this->noticiasObj as $noticia) {
+      if ($noticia->getCategoria() === $categoria) {
+        array_push($noticiasFiltradas, $noticia);
       }
     }
-    return $noticias_filtradas;
+    return $noticiasFiltradas;
+  }
+
+  public function NoticiaId($id)
+  {
+    foreach ($this->noticiasObj as $noticia) {
+      if ($noticia->getId()== $id) {
+          return $noticia;
+      }
+  }
   }
 }
 

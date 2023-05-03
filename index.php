@@ -16,15 +16,7 @@ $noticiascontrolador = new NoticiasControlador();
 $categoriascontrolador = new CategoriasControlador();
 $menucontrolador = new MenuControlador();
 
-$request = $_SERVER['REQUEST_URI'];
-if (isset($routes[$request])) {
-    $controller = $routes[$request]['controller'];
-    $action = $routes[$request]['action'];
-} else {
-    // Si la ruta no se encuentra, redirigir a la página de error 404
-    $controller = 'error';
-    $action = '404';
-}
+
 
 // Obteniendo la acción solicitada
 $action = $_GET['action'] ?? 'inicio';

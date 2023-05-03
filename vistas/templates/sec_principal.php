@@ -16,7 +16,8 @@ $noticia_seg_ter = $noticiasModelo->dos_Primeras_Noticias();
             <h3 class="card-subtitle mb-2 text-muted">
                 <?php echo $noticia_primera->getCategoria(); ?>
             </h3>
-            <div class="card w-100 h-100 cardhover"><video class="embed-responsive-item" controls="">
+            <div class="card w-100 h-100 cardhover">
+                <video class="embed-responsive-item" controls="">
                     <source src="../resources/videos/Video.mp4" type="video/mp4">
                 </video>
                 <h2 class="card-subtitle mb-2 text-muted">
@@ -35,14 +36,14 @@ $noticia_seg_ter = $noticiasModelo->dos_Primeras_Noticias();
                 <div class="col-lg-12 col-md-6 custom-col">
                     <div class="card cardhover">
                         <h2 class="card-title mb-4" style="font-size: 1.75rem;">
-                            <?php echo $noticia_primera->getTitulo(); ?>
+                            <?php echo $noticia->getTitulo(); ?>
                         </h2>
                         <h4 class="card-subtitle mb-2 text-muted">
-                            <?php echo $noticia_primera->getCategoria(); ?>
-                        </h4><img class="card-img-top w-800" src="../resources/images/gripe-aviar.jpg"
+                            <?php echo $noticia->getCategoria(); ?>
+                        </h4><img class="card-img-top w-800" src="<?php echo $noticia->getFoto(); ?>"
                             alt="Imagen de la Noticia">
                         <h5 class="card-text">
-                            <?php echo $noticia_primera->getFecha(); ?>
+                            <?php echo $noticia->getFecha(); ?>
                         </h5>
                     </div>
                 </div>

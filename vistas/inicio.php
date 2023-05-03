@@ -33,48 +33,4 @@
 </main>
 
 
-<div class="container">
-    <h1>Últimas noticias</h1>
-    <?php
-    require_once 'modelos/NoticiasModelos.php';
-//    $noticiasModel = new NoticiasModelos();
-//    $resultado = $noticiasModel->getAll();
-//    $noticias = $noticiasModelo->getAll();
-//    $primeras_noticias = $noticiasModelo->getPrimeras();
-//    $noticias_por_categoria = $noticiasModelo->getCategorias();
-
-    $noticiasModelo = new NoticiasModelos();
-    $noticias = $noticiasModelo->Lista_Noticias();
-
-    ?>
-
-
-
-
-    <div class="row">
-        <?php foreach ($noticias as $noticia): ?>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <?php echo $noticia->getTitulo(); ?>
-                        </h5>
-                        <p class="card-text">
-                            <?php echo $noticia->getCategoria(); ?>
-                        </p>
-                        <a href="index.php?action=ver-noticia&id=<?php echo $noticia->getId(); ?>" class="btn btn-primary">Leer
-                            más</a>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">
-                            <?php echo $noticia->getFecha(); ?>
-                        </small>
-                    </div>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-
-</div>
-
 <?php include 'templates/footer.php'; ?>

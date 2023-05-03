@@ -1,5 +1,7 @@
 <?php
 require_once 'controladores/CategoriasControlador.php';
+require_once 'controladores/NoticiasControlador.php';
+require_once 'controladores/ContactoControlador.php';
 
 
 class MenuControlador
@@ -8,13 +10,12 @@ class MenuControlador
     public function ruta($menu)
     {
         $categoriascontrolador = new CategoriasControlador();
+        $noticiacontrolador = new NoticiasControlador();
+        $contactocontrolador = new ContactoControlador();
 
         switch ($menu) {
             case 'inicio':
-                
-//                header('Location: index.php?action=inicio');
                 include 'vistas/inicio.php';
-//               include 'vistas/inicio.php';
                 break;
             case 'Nacionales':
                 $categoriascontrolador->categoria('Nacionales');
@@ -24,6 +25,12 @@ class MenuControlador
                 break;
             case 'Deportivas':
                 $categoriascontrolador->categoria('Deportivas');
+                break;
+            case 'noticia':
+                $noticiacontrolador->Id();
+                break;
+            case 'cotacto':
+                $contactocontrolador->Contacto();
                 break;
         }
     }
