@@ -1,0 +1,157 @@
+/*Se importa la fuente "Oswald" desde Google Fonts para usar en toda la página.*/
+/*@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");*/
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/*Se aplica a todos los elementos de la página y establece que la fuente utilizada será "Oswald" y la tipografía se establece como "sans-serif".*/
+* {
+  /*font-family: "Oswald", sans-serif;*/
+  font-family: 'Lato', sans-serif;
+}
+html {  font-size: 16px; /* Tamaño de fuente base */}
+
+p,  label, input,textarea, button {  font-size: 1.25em; /* 16px */}
+
+h1 {  font-size: 2.5rem; /* 40px */}
+
+h2 {  font-size: 2rem; /* 32px */}
+
+h3 {  font-size: 1.75rem; /* 24px */}
+
+h4 {  font-size: 1.5rem; /* 20px */}
+
+h5 {  font-size: 1rem; /* 16px */}
+
+h6 {  font-size: 0.875rem; /* 14px */}
+
+
+
+/* Estilos de la jumbotron */
+.jumbotron {
+  background-color: #F5F5F5;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.jumbotron h1 {
+  font-size: 4rem;
+  color: #393E46;
+}
+
+.jumbotron p {
+  font-size: 1.5rem;
+  color: #5A5A5A;
+}
+
+/* Estilos de los títulos */
+h1, h2, h3, h4, h5, h6 {
+  color: #393E46;
+}
+
+/* Estilos de las tarjetas */
+.card {
+  border: none;
+  background-color: #FFFFFF;
+  /*
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);*/
+
+  transition: box-shadow 0.2s ease-in-out;
+  box-shadow: 0px 0px 5px rgba(35, 56, 63, 0.527);
+  padding: 10px;
+}
+
+.card-subtitle {
+  color: #5A5A5A;
+  text-align: justify;
+}
+
+.card-text {
+  color: #393E46;
+  text-align: justify;
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+/* Estilos del navbar */
+.navbar {
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #5A5A5A;
+  font-size: 1.2rem;
+}
+
+.nav-link:hover {
+  color: #393E46;
+}
+
+.navbar-brand img {
+  filter: invert(31%) sepia(62%) saturate(3544%) hue-rotate(187deg) brightness(102%) contrast(95%);
+}
+
+.navbar-toggler-icon {
+  border: none;
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba%28186%2C 186%2C 186%2C 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Estilos de los botones */
+.btn-primary {
+  background-color: #00909E;
+  border-color: #00909E;
+}
+
+.btn-primary:hover {
+  background-color: #008B94;
+  border-color: #008B94;
+}
+
+.btn-outline-primary {
+  color: #00909E;
+  border-color: #00909E;
+}
+
+.btn-outline-primary:hover {
+  background-color: #00909E;
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background-color: #393E46;
+  border-color: #393E46;
+}
+
+.btn-secondary:hover {
+  background-color: #2B2E36;
+  border-color: #2B2E36;
+}
+
+.btn-outline-secondary {
+  color: #393E46;
+  border-color: #393E46;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #393E46;
+  color: #FFFFFF;
+}
+.logo-img {
+  background-color: transparent;
+  padding: 5px;
+  border-radius: 5px;
+}
+a.navbar-brand {
+  color: white !important;
+}
+.cardhover:hover {
+  transform: scale(1.05);
+  font-weight: bold;
+ /* box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.1);*/
+ box-shadow: 0px 0px 10px rgba(35, 56, 63, 0.527);
+ cursor: pointer;
+}
+.custom-col{
+  margin-bottom: 20px;
+}
