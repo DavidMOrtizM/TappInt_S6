@@ -7,7 +7,7 @@
         <h1 class="display-4">Contáctanos</h1>
         <p class="lead">¿Tienes preguntas, comentarios o sugerencias? ¡No dudes en contactarnos!</p>
         <div>
-            <p class="relog" id="relog">3 de mayo de 2023, 16:17:48</p>
+            <p class="relog" id="relog"></p>
         </div>
     </div>
 </div>

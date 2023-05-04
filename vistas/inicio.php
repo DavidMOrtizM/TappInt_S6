@@ -19,7 +19,7 @@
         <h1 class="display-4">Noticias Recientes</h1>
         <p class="lead">Manténgase informado con lo último en noticias en El Faro.</p>
         <div>
-            <p class="relog" id="relog">30 de abril de 2023, 17:46:01</p>
+            <p class="relog" id="relog"></p>
         </div>
     </div>
 </div>
