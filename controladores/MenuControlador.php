@@ -12,6 +12,7 @@ class MenuControlador
         $categoriascontrolador = new CategoriasControlador();
         $noticiacontrolador = new NoticiasControlador();
         $contactocontrolador = new ContactoControlador();
+        $crear_usuariocontrolador = new CrearUsuariocontrolador();
 
         switch ($menu) {
             case 'inicio':
@@ -32,6 +33,9 @@ class MenuControlador
             case 'contacto':
                 $contactocontrolador->Contacto();
                 break;
+            case 'crear_usuario':
+                    $crear_usuariocontrolador->crearUsuario();
+                    break;
         }
     }
 }

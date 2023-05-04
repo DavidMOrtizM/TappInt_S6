@@ -57,6 +57,15 @@
             }
           } ?>" href="index.php?action=contacto">Contacto</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link <?php
+          if (isset($_GET['action'])) {
+            if ($_GET['action'] == 'crear_usuario') {
+              echo 'active';
+              echo ' aria-current="page"';
+            }
+          } ?>" href="index.php?action=crear_usuario">Crear usuario</a>
+        </li>
       </ul>
     </div>
   </div>
