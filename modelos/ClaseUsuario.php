@@ -43,6 +43,13 @@ class Usuario {
       // Aquí se guarda la sesión en el mapa de sesiones
       $this->session_map[$key] = $value;
     }
+
+    function cerrar_sesion() {
+        $this->username = '';
+        $this->password = '';
+        $this->logged_in = false;
+        $this->session_map = array();
+      }
   
     function recuperar_sesion($key) {
       // Aquí se recupera la sesión del mapa de sesiones
@@ -62,6 +69,7 @@ class Usuario {
       }
       return false;
     }
+
   
     function obtener_usuarios() {
       $usuarios_json = file_get_contents("modelos/usuarios.json");
