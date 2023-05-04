@@ -18,7 +18,7 @@ class NoticiasModelos
 
   public function __construct()
   {
-    $dato_noticia = json_decode(file_get_contents('noticias.json'), true);
+    $dato_noticia = json_decode(file_get_contents('modelos/noticias.json'), true);
     usort($dato_noticia, function ($a, $b) {
       $fechaA = strtotime($a['fecha']);
       $fechaB = strtotime($b['fecha']);
@@ -79,11 +79,11 @@ class NoticiasModelos
   }
   public function Crear_Noticia($categoria, $titulo, $texto)
   {
-    $jsonString = file_get_contents('noticias.json');
+    $jsonString = file_get_contents('modelos/noticias.json');
     $noticias = json_decode($jsonString, true);
 
     $lastIndex = count($noticias) + 1;
-    echo "<script>alert('" . $lastIndex . "')</script>";
+    
 
     switch ($categoria) {
       case 'Nacionales':
@@ -95,12 +95,7 @@ class NoticiasModelos
       case 'Deportivas':
         $categorias = "deportes";
         break;
-
-
     }
-
-
-
     $noticia = array(
       "id" => $lastIndex . "",
       "titulo" => $titulo,
@@ -114,12 +109,8 @@ class NoticiasModelos
     $noticias[] = $noticia;
     $newJsonString = json_encode($noticias, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
     file_put_contents('noticias.json', $newJsonString);
-
-
+    echo "<script>alert('La Noticia a sido guardada')</script>";
   }
-
-
-
 
 }
 
