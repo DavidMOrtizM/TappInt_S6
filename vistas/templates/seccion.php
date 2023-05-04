@@ -26,7 +26,20 @@ if (isset($_GET['action'])) {
 foreach ($categorias as $categoria) {
     $noticia_categoria = $noticiasModelo->Lista_Categoria($categoria);
     ?>
-    <div class="my-5 h-100"><a style="text-decoration: none;" href="<?php echo $categoria; ?>.html">
+    <div class="my-5 h-100"><a style="text-decoration: none;" href="index.php?action=<?php
+    switch ($categoria) {
+        case 'nacional':
+            $seccion = "Nacionales";
+            break;
+        case 'negocios':
+            $seccion = "Economicas";
+            break;
+        case 'deportes':
+            $seccion = "Deportivas";
+            break;
+    }
+    echo $seccion;
+    ?>">
             <h2>
                 <?php echo ucfirst($categoria); ?>
             </h2>

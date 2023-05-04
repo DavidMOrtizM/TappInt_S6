@@ -8,11 +8,11 @@
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
         <h5 class="text-uppercase">Secciones</h5>
         <ul class="list-unstyled mb-0">
-          <li><a onclick="Click_link()" href="principal.html">Inicio</a></li>
-          <li><a onclick="Click_link()" href="nacional.html">Nacional</a></li>
-          <li><a onclick="Click_link()" href="negocios.html">Negocios</a></li>
-          <li><a onclick="Click_link()" href="deportes.html">Deporte</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="index.php?action=inicio">Inicio</a></li>
+          <li><a  href="index.php?action=Nacionales">Nacional</a></li>
+          <li><a  href="index.php?action=Economicas">Negocios</a></li>
+          <li><a  href="index.php?action=Deportivas">Deporte</a></li>
+          <li><a href="index.php?action=contacto">Contacto</a></li>
         </ul>
       </div>
       <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
@@ -29,6 +29,7 @@
     <p>© 2023 El Faro. Todos los derechos reservados.</p>
   </div>
 </footer>
+<script src="public/js/funciones.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>

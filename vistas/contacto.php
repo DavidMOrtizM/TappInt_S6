@@ -7,7 +7,7 @@
         <h1 class="display-4">Contáctanos</h1>
         <p class="lead">¿Tienes preguntas, comentarios o sugerencias? ¡No dudes en contactarnos!</p>
         <div>
-            <p class="relog" id="relog">3 de mayo de 2023, 16:17:48</p>
+            <p class="relog" id="relog"></p>
         </div>
     </div>
 </div>
@@ -16,7 +16,8 @@
     <div class="row">
         <div class="col-md-8">
             <h2>Formulario de contacto</h2>
-            <form action="#" method="POST">
+            <form action="index.php" method="POST">
+                <input type="hidden" name="Agregar_Comentario">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="name" name="name" required="" control-id="ControlID-1">
