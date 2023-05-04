@@ -29,7 +29,7 @@ class MenuControlador
             case 'noticia':
                 $noticiacontrolador->Id();
                 break;
-            case 'cotacto':
+            case 'contacto':
                 $contactocontrolador->Contacto();
                 break;
         }

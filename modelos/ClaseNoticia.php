@@ -108,5 +108,10 @@ class Noticia
     {
         $this->fecha = $fecha;
     }
+
+
+
+
+
 }
 ?>

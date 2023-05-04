@@ -19,6 +19,8 @@ if (isset($_GET['action'])) {
             $categorias = array("nacional", "negocios", "deportes");
             break;
     }
+} else {
+    $categorias = array("nacional", "negocios", "deportes");
 }
 
 foreach ($categorias as $categoria) {
@@ -32,7 +34,8 @@ foreach ($categorias as $categoria) {
         <div class="row" id="<?php echo $categoria; ?>">
             <?php foreach ($noticia_categoria as $noticia): ?>
                 <div class="col-md-4 custom-col">
-                    <a style="text-decoration= none;" href="index.php?action=noticia&categoria=<?php echo $noticia->getCategoria(); ?>&id=<?php echo $noticia->getId(); ?>">
+                    <a style="text-decoration: none;"
+                        href="index.php?action=noticia&categoria=<?php echo $noticia->getCategoria(); ?>&id=<?php echo $noticia->getId(); ?>">
                         <div class="card cardhover h-100">
                             <h4 class="card-title">
                                 <?php echo $noticia->getTitulo(); ?>

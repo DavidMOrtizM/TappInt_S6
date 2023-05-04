@@ -15,5 +15,6 @@
 </div>
 <main class="container my-5" id="Noticias">
     <?php include 'templates/seccion.php'; ?>
+    <?php include 'templates/formnoticia.php'; ?>
 </main>
 <?php include 'templates/footer.php'; ?>

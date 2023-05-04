@@ -72,11 +72,55 @@ class NoticiasModelos
   public function NoticiaId($id)
   {
     foreach ($this->noticiasObj as $noticia) {
-      if ($noticia->getId()== $id) {
-          return $noticia;
+      if ($noticia->getId() == $id) {
+        return $noticia;
       }
+    }
   }
+  public function Crear_Noticia($categoria, $titulo, $texto)
+  {
+    $jsonString = file_get_contents('noticias.json');
+    $noticias = json_decode($jsonString, true);
+
+    $lastIndex = count($noticias) + 1;
+    echo "<script>alert('" . $lastIndex . "')</script>";
+
+    switch ($categoria) {
+      case 'Nacionales':
+        $categorias = "nacional";
+        break;
+      case 'Economicas':
+        $categorias = "negocios";
+        break;
+      case 'Deportivas':
+        $categorias = "deportes";
+        break;
+
+
+    }
+
+
+
+    $noticia = array(
+      "id" => $lastIndex . "",
+      "titulo" => $titulo,
+      "categoria" => $categorias,
+      "foto" => "public/resources/images/sin_imagen.png",
+      "texto" => $texto,
+      "audio" => "",
+      "video" => "",
+      "fecha" => date("Y-m-d")
+    );
+    $noticias[] = $noticia;
+    $newJsonString = json_encode($noticias, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+    file_put_contents('noticias.json', $newJsonString);
+
+
   }
+
+
+
+
 }
 
 ?>
