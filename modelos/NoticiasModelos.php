@@ -83,7 +83,7 @@ class NoticiasModelos
     $noticias = json_decode($jsonString, true);
 
     $lastIndex = count($noticias) + 1;
-    
+
 
     switch ($categoria) {
       case 'Nacionales':
@@ -96,7 +96,7 @@ class NoticiasModelos
         $categorias = "deportes";
         break;
     }
-    $noticia = array(
+    $noticia = [
       "id" => $lastIndex . "",
       "titulo" => $titulo,
       "categoria" => $categorias,
@@ -105,10 +105,10 @@ class NoticiasModelos
       "audio" => "",
       "video" => "",
       "fecha" => date("Y-m-d")
-    );
+    ];
     $noticias[] = $noticia;
     $newJsonString = json_encode($noticias, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    file_put_contents('noticias.json', $newJsonString);
+    file_put_contents('modelos/noticias.json', $newJsonString);
     echo "<script>alert('La Noticia a sido guardada')</script>";
   }
 

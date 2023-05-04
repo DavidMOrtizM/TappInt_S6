@@ -81,14 +81,14 @@ class Comentario
         $lastIndex = count($comentarios) + 1;
         
 
-        $comentario = array(
+        $comentario = [
             "id" => $lastIndex . "",
             "nombre" => $nombre,
             "correo" => $correo,
             "asunto" => $asunto,
             "mensaje" => $mensaje,
             "fecha" => date("Y-m-d")
-        );
+        ];
         $comentarios[] = $comentario;
         $newJsonString = json_encode($comentarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         file_put_contents('modelos/comentarios.json', $newJsonString);

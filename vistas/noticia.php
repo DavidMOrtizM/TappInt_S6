@@ -1,5 +1,4 @@
-<?php include 'templates/header.php'; ?>
-<?php
+<?php include 'templates/header.php'; 
 require_once 'modelos/NoticiasModelos.php';
 $noticiasModelo = new NoticiasModelos();
 
