@@ -4,7 +4,7 @@
 <!-- Jumbotron -->
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h1 class="display-4">Crear cuenta</h1>
+        <h1 class="display-4">Iniciar Sección</h1>
         <p class="lead">Te mantendremos al día con noticias de tu interez</p>
         <div>
             <p class="relog" id="relog">3 de mayo de 2023, 16:17:48</p>
@@ -15,23 +15,19 @@
 <main class="container my-5">
     <div class="row">
         <div class="col-md-8">
-            <h2>Crear nueva cuenta</h2>
-            <form action="index.php?action=iniciar_seccion" method="POST">
-            <input type="hidden" name="Crear_Usuario" >
+            <form action="index.php?action=inicio" method="POST">
+                <input type="hidden" name="Autenticar">
+                <h1>Iniciar Sección</h1>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" id="name" name="name" required="" control-id="ControlID-1">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="email" class="form-control" id="email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" required=""
-                        control-id="ControlID-2">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" class="form-control" id="password" required>
                 </div>
-                <div class="mb-3">
-                    <label for="contraseña" class="form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="password" name="password" required="">
-                </div>
-                <button type="submit" class="btn btn-primary" control-id="ControlID-5">Crear</button>
+                <button type="submit" class="btn btn-primary" class="btn">Login</button>
+                <p>¿No tienes una cuenta? <a href="index.php?action=crear_usuario">Únete a El Faro</a></p>
             </form>
         </div>
         <div class="col-md-4">

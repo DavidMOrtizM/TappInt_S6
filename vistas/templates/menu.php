@@ -64,7 +64,7 @@
               echo 'active';
               echo ' aria-current="page"';
             }
-          } ?>" href="index.php?action=crear_usuario">Crear usuario</a>
+          } ?>" href="index.php?action=iniciar_seccion">Iniciar Sección</a>
         </li>
       </ul>
     </div>

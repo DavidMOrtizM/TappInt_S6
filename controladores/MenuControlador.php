@@ -2,6 +2,7 @@
 require_once 'controladores/CategoriasControlador.php';
 require_once 'controladores/NoticiasControlador.php';
 require_once 'controladores/ContactoControlador.php';
+require_once 'controladores/UsuarioControlador.php';
 
 
 class MenuControlador
@@ -12,7 +13,7 @@ class MenuControlador
         $categoriascontrolador = new CategoriasControlador();
         $noticiacontrolador = new NoticiasControlador();
         $contactocontrolador = new ContactoControlador();
-        $crear_usuariocontrolador = new CrearUsuariocontrolador();
+        $usuariocontrolador = new Usuariocontrolador();
 
         switch ($menu) {
             case 'inicio':
@@ -34,8 +35,11 @@ class MenuControlador
                 $contactocontrolador->Contacto();
                 break;
             case 'crear_usuario':
-                    $crear_usuariocontrolador->crearUsuario();
-                    break;
+                $usuariocontrolador->crearUsuario();
+                break;
+            case 'iniciar_seccion':
+                $usuariocontrolador->iniciar_seccion();
+                break;
         }
     }
 }
