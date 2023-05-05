@@ -88,25 +88,5 @@
         "audio": "",
         "video": "",
         "fecha": "2023-03-29"
-    },
-    {
-        "id": "10",
-        "titulo": "ffff",
-        "categoria": "nacional",
-        "foto": "public/resources/images/sin_imagen.png",
-        "texto": "fff",
-        "audio": "",
-        "video": "",
-        "fecha": "2023-05-04"
-    },
-    {
-        "id": "11",
-        "titulo": "asdfe",
-        "categoria": "deportes",
-        "foto": "public/resources/images/sin_imagen.png",
-        "texto": "asfe",
-        "audio": "",
-        "video": "",
-        "fecha": "2023-05-04"
     }
 ]
