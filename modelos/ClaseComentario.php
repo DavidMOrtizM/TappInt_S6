@@ -1,98 +1,88 @@
 <?php
-class Comentario
+require_once 'ClaseDatos.php';
+class Comentario extends Datos
 {
-    private $id;
-    private $nombre;
-    private $correo;
-    private $asunto;
-    private $mensaje;
-    private $fecha;
+    private int $id_comentario;
+    private ?string $mensaje = null;
+    private int $id_usuario;
+    private int $id_noticia;
 
-    public function __construct()
+    public function getId_comentario(): int
     {
-
+        return $this->id_comentario;
     }
 
-    public function getId()
+
+    public function setId_comentario(int $id_comentario): self
     {
-        return $this->id;
+        $this->id_comentario = $id_comentario;
+        return $this;
     }
 
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
 
-    public function getNombre()
-    {
-        return $this->nombre;
-    }
-
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    }
-
-    public function getCorreo()
-    {
-        return $this->correo;
-    }
-
-    public function setCorreo($correo)
-    {
-        $this->correo = $correo;
-    }
-
-    public function getAsunto()
-    {
-        return $this->asunto;
-    }
-
-    public function setAsunto($asunto)
-    {
-        $this->asunto = $asunto;
-    }
-
-    public function getMensaje()
+    public function getMensaje(): ?string
     {
         return $this->mensaje;
     }
 
-    public function setMensaje($mensaje)
+
+    public function setMensaje(?string $mensaje): self
     {
         $this->mensaje = $mensaje;
-    }
-    public function getFecha()
-    {
-        $date = DateTime::createFromFormat('Y-m-d', $this->fecha);
-        $nuevaFecha = $date->format('d-m-Y');
-        return $nuevaFecha;
-    }
-    public function setFecha($fecha)
-    {
-        $this->fecha = $fecha;
+        return $this;
     }
 
-    public function Crear_Comentario($nombre, $correo, $asunto, $mensaje)
+
+    public function getId_usuario(): int
     {
-        $jsonString = file_get_contents('modelos/comentarios.json');
-        $comentarios = json_decode($jsonString, true);
+        return $this->id_usuario;
+    }
 
-        $lastIndex = count($comentarios) + 1;
-        
 
-        $comentario = [
-            "id" => $lastIndex . "",
-            "nombre" => $nombre,
-            "correo" => $correo,
-            "asunto" => $asunto,
-            "mensaje" => $mensaje,
-            "fecha" => date("Y-m-d")
-        ];
-        $comentarios[] = $comentario;
-        $newJsonString = json_encode($comentarios, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-        file_put_contents('modelos/comentarios.json', $newJsonString);
+    public function setId_usuario(int $id_usuario): self
+    {
+        $this->id_usuario = $id_usuario;
+        return $this;
+    }
+
+
+    public function getId_noticia(): int
+    {
+        return $this->id_noticia;
+    }
+
+
+    public function setId_noticia(int $id_noticia): self
+    {
+        $this->id_noticia = $id_noticia;
+        return $this;
+    }
+
+
+    public function __construct()
+    {
+        $this->conectar();
+    }
+    public function __destruct()
+    {
+        $this->desconectar();
+    }
+    public function listar_comentarios()
+    {
+
+    }
+
+    public function insertar_comentario($mensaje, $id_usuario, $id_noticia)
+    {
+        $this->ejecutarsinrespuesta("insertar_comentario", array($mensaje, $id_usuario, $id_noticia));
         echo "<script>alert('Su comentario ha sido enviado')</script>";
     }
+
+
+
+
+
+
+
 }
 ?>

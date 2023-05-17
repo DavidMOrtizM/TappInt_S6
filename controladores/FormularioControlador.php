@@ -16,12 +16,12 @@ class FormularioControlador
         }
 
         if ($formulario == "Agregar_Comentario") {
-            $comentario = new Comentario();
-            $nombre = $_POST['name'];
-            $correo = $_POST['email'];
-            $asunto = $_POST['subject'];
+            
             $mensaje = $_POST['message'];
-            $comentario->Crear_Comentario($nombre, $correo, $asunto, $mensaje);
+            $usuario = $_POST['usuario'];
+            $noticia = $_POST['noticia'];
+            $comentario = new Comentario();
+            $comentario->insertar_comentario($mensaje, $usuario, $noticia);
         }
         if ($formulario == "Crear_Usuario") {
             $usuario = new Usuario();

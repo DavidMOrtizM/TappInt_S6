@@ -64,5 +64,9 @@ $noticia_id = $noticiasModelo->NoticiaId($_GET['id']);
             </div>
         </div>
     </div>
+
+    <?php include 'templates/form_comentarios.php'; ?>
+
+
 </main>
 <?php include 'templates/footer.php'; ?>

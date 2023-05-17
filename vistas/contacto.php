@@ -17,7 +17,7 @@
         <div class="col-md-8">
             <h2>Formulario de contacto</h2>
             <form action="index.php" method="POST">
-                <input type="hidden" name="Agregar_Comentario">
+                <input type="hidden" name="">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="name" name="name" required="" control-id="ControlID-1">
