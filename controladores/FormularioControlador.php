@@ -20,6 +20,7 @@ class FormularioControlador
             $mensaje = $_POST['message'];
             $usuario = $_POST['usuario'];
             $noticia = $_POST['noticia'];
+            echo "<script>alert('". $mensaje . $usuario . $noticia    ."')</script>";
             $comentario = new Comentario();
             $comentario->insertar_comentario($mensaje, $usuario, $noticia);
         }
