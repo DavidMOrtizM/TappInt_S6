@@ -74,8 +74,9 @@ class Comentario extends Datos
 
     public function insertar_comentario($mensaje, $id_usuario, $id_noticia)
     {
+        echo "<script>alert('". $mensaje . $id_usuario . $id_noticia    ."')</script>";
         $this->ejecutarsinrespuesta("insertar_comentario", array($mensaje, $id_usuario, $id_noticia));
-        echo "<script>alert('Su comentario ha sido enviado')</script>";
+        
     }
 
 

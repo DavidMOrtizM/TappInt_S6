@@ -28,9 +28,6 @@ Class Datos
         $query = "CALL $procedimiento(";
         echo "<script>alert(' estoy aqui ')</script>";
         $query += substr(str_repeat("?,", count($parametros)), 0, -1) . ")";
-
-
-
         $statement = $this->conect->prepare($query);
         $contador = 1;
         
