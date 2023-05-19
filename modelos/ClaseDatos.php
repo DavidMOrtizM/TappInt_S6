@@ -1,4 +1,6 @@
 <?php
+
+
 Class Datos
 {
     private $host = "localhost";
@@ -11,9 +13,10 @@ Class Datos
     {
         $connectionString = "mysql:host=" . $this->host . ";dbname=" . $this->db . ";charset=utf8";
         try {
+            
             $this->conect = new PDO($connectionString, $this->user, $this->password);
             $this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Conexion existosa";
+
         } catch (Exception $e) {
             $this->conect = "Error de Conexión";
             echo "Error: " . $e->getMessage();
@@ -23,16 +26,15 @@ Class Datos
     {
         $this->conect = null;
     }
-    public function ejecutarsinrespuesta($procedimiento, $parametros)
+    public function ejecutarsinrespuesta($procedimiento, array $parametros)
     {
-        $query = "CALL $procedimiento(";
-        echo "<script>alert(' estoy aqui ')</script>";
-        $query += substr(str_repeat("?,", count($parametros)), 0, -1) . ")";
+
+        $query = "CALL $procedimiento(" . str_repeat("?,", count($parametros) - 1) . "?)";
         $statement = $this->conect->prepare($query);
-        $contador = 1;
         
+        $contador = 1;
         foreach ($parametros as $parametro) {
-            $statement->bindParam($contador, $parametro);
+            $statement->bindValue($contador, $parametro);
             $contador++;
         }
         $statement->execute();
@@ -40,9 +42,9 @@ Class Datos
 
     public function ejecutarconrespuesta($procedimiento, $parametros)
     {
-        $query = "CALL $procedimiento(";
-        $query += str_repeat("?,", count($parametros)) . substr(0, -1) + ")";
+        $query = "CALL $procedimiento(" . str_repeat("?,", count($parametros) - 1) . "?)";
         $statement = $this->conect->prepare($query);
+        
         $contador = 1;
         foreach ($parametros as $parametro) {
             $statement->bindParam($contador, $parametro);
@@ -50,7 +52,7 @@ Class Datos
         }
         $statement->execute();
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-        return $$result;
+        return $result;
     }
 }
 
